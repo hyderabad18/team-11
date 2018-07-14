@@ -1,13 +1,13 @@
 
 <?php
-error_reporting(E_ERROR | E_PARSE);session_start();
+session_start();
 include 'connection.php';
 if(isset($_POST['btn_login']))
 {
 $email = $_POST["email"];
  $_SESSION['email']=$email;
  $password = $_POST["password"]; 
-$result = mysqli_query($conn,"SELECT password FROM student WHERE email = '".$_POST["email"]."' and password='".$_POST["password"]."'");
+$result = mysqli_query($conn,"SELECT emp_password FROM employee WHERE emp_email = '".$_POST["email"]."' and emp_password='".$_POST["password"]."'");
 if (!$result) {
     echo 'Could not run query: ' . mysqli_error();
     exit;
@@ -17,7 +17,7 @@ if (!$result) {
 if($result->num_rows==1) 
 {
 
-header('Location:http://localhost:8080/youthforjob/team-11/student.html');
+header('Location:http://localhost:8080/youthforjob/team-11/employee.html');
 }
 else
 {
@@ -77,7 +77,7 @@ $conn->close();
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" action="student_login.php" method="post">
+          <form class="col s12" action="employee_login.php" method="post">
             <div class='row'>
               <div class='col s12'>
               </div>
@@ -97,9 +97,7 @@ $conn->close();
                 <input class='validate' type='password' name='password' id='password' />
                 <label for='password'>Enter your password</label>
               </div>
-              <label style='float: right;'>
-								<a class='pink-text' href='http://localhost:8080/youthforjob/team-11/frontEnd/onetimecode.php'><b>Forgot Password?</b></a>
-							</label>
+              
             </div>
 
             <br />
@@ -111,7 +109,7 @@ $conn->close();
           </form>
         </div>
       </div>
-      <a href="http://localhost:8080/youthforjob/team-11/frontEnd/stu_register.php">Create account</a>
+      <a href="emp_register.html">Create account</a>
     </center>
 
     <div class="section"></div>
