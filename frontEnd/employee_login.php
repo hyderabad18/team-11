@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include 'connection.php';
@@ -109,7 +108,7 @@ $conn->close();
           </form>
         </div>
       </div>
-      <a href="emp_register.html">Create account</a>
+      <a href="http://localhost:8080/youthforjob/team-11/frontEnd/emp_register.php">Create account</a>
     </center>
 
     <div class="section"></div>
