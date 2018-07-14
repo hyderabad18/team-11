@@ -125,7 +125,7 @@ if($result1->num_rows==1)
 	
    die('email alredy registered');	
 }
-if($result2->num_rows==1)
+else if($result2->num_rows==1)
 {	
 	
 	die('mobile already registered');
