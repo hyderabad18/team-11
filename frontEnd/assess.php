@@ -28,13 +28,12 @@
                     <span class="card-title">Type of Question:SAQ</span>
  <p> 
  <?php
-$emil=$_SESSION['email'];
 if(isset($_POST['apt']))
 {
     include'connection.php';
-	$sql=mysqli_query($conn,"select * from mock where type='quant' ");
-	
- while($row=mysqli_fetch_array($sql))
+	$sql=mysqli_query($conn,"select * from mock where type='quant'  LIMIT 1,1");
+$_SESSION['count']=1;
+ $row=mysqli_fetch_array($sql);
 	{
 	echo $row[1]; 
 	?>
@@ -74,3 +73,6 @@ if(isset($_POST['apt']))
 </body>
 
 </html>
+<form>
+</form>
+
