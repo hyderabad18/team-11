@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Test Portal</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<style>
+.count{
+float: right;
+width: 100px;
+}
+
+</style> 
+</head>        
+<body>
+<script type = "text/javascript">
+
+function buttonSelect(QuestionType){
+	var input = getElementById("input");
+	var parent = document.getElementById("parentDiv");
+	if(QuestionType.toUpperCase()=="SINGLE")
+		{
+		input.setAttribute('type', 'radio');
+		parent.appendChild("options");
+		}
+	else
+		{
+		input.setAttribute('type', 'checkbox');
+		parent.appendChild("options");
+		}
+	return type;
+}
+</script>
+<p id="demo"></p>
+<div class = "count">
+<div class="row">
+    <div class="col s12 m12">
+      <div class="card grey">
+        <div class="card-content red-text">
+<div id = "counter" >
+</div>    
+        </div>
+     </div>
+    </div>
+   </div>
+</div>
+
+<div class="row">
+    <div class="col s1 m12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Question 1</span>
+          <p>A train 125 m long passes a man, running at 
+          5 km/hr in the same direction in which the train is going,
+           in 10 seconds. The speed of the train is:</p>
+        </div>
+        <div class="card-action">
+          <form name  = "Q1" action="#" id = "options">
+    <p> 
+    </br>
+      <label>
+<script>
+function countdown(minutes) {
+    var seconds = 60;
+    var mins = minutes
+    function tick() {
+        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+        var counter = document.getElementById("counter");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if( seconds > 0 ) {
+            setTimeout(tick, 1000);
+        } else {
+            if(mins > 1){
+                countdown(mins-1);           
+            }
+        }
+    }
+    tick();
+}
+countdown(10);
+</script>
+                <input name="group1" id = "options"/>
+        <span>Option1</span>
+      </label>
+          </br>
+      <label>
+        <input name="group1" />
+        <span>Option2</span>
+      </label>
+          </br>
+      <label>
+        <input name="group1" type="radio"  />
+        <span>Option3</span>
+      </label>
+          </br>
+      <label>
+        <input name="group1" type="radio"  />
+        <span>Option4</span>
+      </label>
+    </p>
+  </form>
+  </div>
+  
+        </div>
+      </div>
+    </div>         
+</body>
+</html>

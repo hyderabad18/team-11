@@ -1,0 +1,63 @@
+Read each sentence to find out whether there is any grammatical error in it. The error, if any will be in one part of the sentence. The letter of that part is the answer. If there is no error, the answer is 'D'. (Ignore the errors of punctuation, if any).
+
+1. 	
+(solve as per the direction given above)
+
+A.	We discussed about the problem so thoroughly
+B.	on the eve of the examination
+C.	that I found it very easy to work it out.
+D.	No error.
+
+Ans- A
+
+2. 	
+(solve as per the direction given above)
+
+A.	An Indian ship
+B.	laden with merchandise
+C.	got drowned in the Pacific Ocean.
+D.	No error.
+
+Ans- C
+
+3.(solve as per the direction given above)
+
+A.	The Indian radio
+B.	which was previously controlled by the British rulers
+C.	is free now from the narrow vested interests.
+D.	No error.
+
+Ans- C
+
+4. 
+S1:	A force of exists between everybody in the universe.
+P :	Normally it is very small but when the one of the bodies is a planet, like earth, the force is considerable.
+Q :	It has been investigated by many scientists including Galileo and Newton.
+R :	Everything on or near the surface of the earth is attracted by the mass of earth.
+S :	This gravitational force depends on the mass of the bodies involved.
+S6:	The greater the mass, the greater is the earth's force of attraction on it. We can call this force of attraction gravity.
+The Proper sequence should be:
+
+A.	PRQS
+B.	PRSQ
+C.	QSRP
+D.	QSPR
+
+Ans- D
+
+5. 
+S1:	Calcutta unlike other cities kepts its trams.
+P :	As a result there horrendous congestion.
+Q :	It was going to be the first in South Asia.
+R :	They run down the centre of the road
+S :	To ease in the city decided to build an underground railway line.
+S6:	The foundation stone was laid in 1972.
+The Proper sequence should be:
+
+A.	PRSQ
+B.	PSQR
+C.	SQRP
+D.	RPSQ
+
+Ans- D
+
