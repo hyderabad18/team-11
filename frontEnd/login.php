@@ -98,7 +98,7 @@ $conn->close();
                 <label for='password'>Enter your password</label>
               </div>
               <label style='float: right;'>
-								<a class='pink-text' href='#!'><b>Forgot Password?</b></a>
+								<a class='pink-text' href='http://localhost:8080/youthforjob/team-11/frontEnd/onetimecode.php'><b>Forgot Password?</b></a>
 							</label>
             </div>
 
