@@ -118,24 +118,21 @@ $a=$_POST['name'];
 $b=$_POST['email'];
 $c=$_POST['password'];
 $d=$_POST['mobile'];
-$result1 = mysqli_query($conn,"SELECT compnay_email FROM coorporate WHERE company_email = '".$_POST["email"]."'");
+$result1 = mysqli_query($conn,"SELECT company_email FROM coorporate WHERE company_email = '".$_POST["email"]."'");
 $result2 = mysqli_query($conn,"SELECT company_contact FROM  coorporate WHERE company_contact = '".$_POST["mobile"]."'");
-if($result1->num_rows==1)
+if($result1->num_rows==1 ||$result2->num_rows==1)
 {
-	
-   die('email alredy registered');	
-}
-else if($result2->num_rows==1)
-{	
-	
-	die('mobile already registered');
-}
-
-$result2 = mysqli_query($conn,"insert into coorporate(company_name,company_email,password,company_contact) values('$a','$b','$c','$d')");
-if($result2)
+	$result3 = mysqli_query($conn,"insert into coorporate(company_name,company_email,password,company_contact) values('$a','$b','$c','$d')");
+if($result3)
 {
 	header('Location: http://localhost:8080/youthforjob/team-11/frontEnd/corporate_login.php');
 }
+	
+  
+}
+
+ die('email or number alredy registered');	
+
 }
 ?>
 
