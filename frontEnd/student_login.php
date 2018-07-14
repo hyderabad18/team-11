@@ -13,7 +13,7 @@ if (!$result) {
     exit;
 }
 
-			$row = mysqli_fetch_row($result);
+$row = mysqli_fetch_row($result);
 if($result->num_rows==1) 
 {
 
