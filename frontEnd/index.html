@@ -2,6 +2,7 @@
         <html lang="en">
         <head>
 
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <title>Youth4Jobs Portal</title>
@@ -11,6 +12,12 @@
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
           <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+          <link href="css/myStyle.css" rel="stylesheet"/>
+          <script type="text/javascript">  $(document).ready(function(){
+            $('.modal').modal();
+            $('#modal').modal('open');
+          });
+          </script>
 
         </head>
         <body>
@@ -24,8 +31,8 @@
                   <h5 class="header col s12 light"><b>I'M A</b></h5>
                 </div>
                 <div class="row center">
-                  <a id="download-button" class="btn-large waves-effect waves-light white black-text modal-trigger" href="#modal1">Student</a>
-  
+                  <a id="download-button" class="btn-large waves-effect waves-light white black-text modal-trigger" href="login.html">Student</a>
+
                   <a href="#" id="download-button" class="btn-large waves-effect waves-light white black-text">Corporate</a>
 
                   <a href="#" id="download-button" class="btn-large waves-effect waves-light white black-text">Employee</a>
@@ -141,15 +148,14 @@
                 </div>
               </div>
             </div>
-            </div>
-          </footer>
+          </div>
+        </footer>
 
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
 
-          <!--  Scripts-->
-          <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-          <script src="js/materialize.js"></script>
-          <script src="js/init.js"></script>
+      </body>
 
-          </body>
-
-        </html>
+      </html>
