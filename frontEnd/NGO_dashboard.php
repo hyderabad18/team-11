@@ -1,3 +1,13 @@
+<?php
+session_start();
+include"connection.php";
+
+$name=$_SESSION['email'];
+if($name==null)
+{
+	header('Location:localhost:8080/youthforjob/team-11/frontEnd/employee_login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>NGO Dashboard</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -21,7 +31,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand" href="index.html">NGO Dashboard</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,88 +46,39 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Charts</span>
+            <span class="nav-link-text">Stats</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Outreach</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Navbar</a>
+              <a href="prospective.html">Prospective</a>
             </li>
             <li>
-              <a href="cards.html">Cards</a>
+              <a href="cards.html">Registered</a>
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.html">Login Page</a>
-            </li>
-            <li>
-              <a href="register.html">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Link</span>
+        
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
           </a>
         </li>
       </ul>
-
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+		   <h5>Welcome&nbsp;<?php echo $name;?></h5>
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
     </div>
   </nav>
   <div class="content-wrapper">
@@ -135,12 +96,13 @@
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
+                <i class="fa fa-fw fa-graduation-cap "></i>
               </div>
-              <div class="mr-5">Notifications</div>
+              <div class="mr-5">Eligible students</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="NGO_Estu.html">
               <span class="float-left">View Details</span>
+
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
@@ -151,12 +113,12 @@
           <div class="card text-white bg-warning o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
+                <i class="fa fa-fw fa-briefcase"></i>
               </div>
-              <div class="mr-5">Take Tests</div>
+              <div class="mr-5">Job openings</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
+              <span class="float-left">View </span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
@@ -167,12 +129,12 @@
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-cart"></i>
+                <i class="fa fa-fw fa-question-circle"></i>
               </div>
-              <div class="mr-5">Progress</div>
+              <div class="mr-5">Question Bank</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
+              <span class="float-left">View</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
@@ -183,12 +145,12 @@
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
+                <i class="fa fa-fw fa-calendar"></i>
               </div>
-              <div class="mr-5">training Locations</div>
+              <div class="mr-5">Training Events</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
+              <span class="float-left">Create or update</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
@@ -197,10 +159,68 @@
         </div>
       </div>
       <!-- Area Chart Example-->
+   
+      <div class="row">
+                <div class="col-lg-3"></div>       
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
 
+        <div class="col-lg-3">
+          <!-- Example Notifications Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-trophy"></i> Student Leaderboard</div>
+            <div class="list-group list-group-flush small">
+              <a class="list-group-item list-group-item-action" href="#">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Raghu Ram</strong>
+                    <div class="text-muted smaller">Aptitude</div>
+                  </div>
+                </div>
+              </a>
+              <a class="list-group-item list-group-item-action" href="#">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Krishna</strong>
+                    <div class="text-muted smaller">Quant</div>
+                  </div>
+                </div>
+              </a>
+              <a class="list-group-item list-group-item-action" href="#">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Arjuna</strong>
+                    <div class="text-muted smaller">Coding</div>
+                  </div>
+                </div>
+              </a>
+              <a class="list-group-item list-group-item-action" href="#">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Radha</strong>
+                    <div class="text-muted smaller">Verbal</div>
+                  </div>
+                </div>
+              </a>
+              <a class="list-group-item list-group-item-action" href="#">View all leaderboard...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+        </div>
+      </div>
+    </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
@@ -218,7 +238,10 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="employee_login.php">Logout</a>
+			<?php
+			session_destroy();
+			?>
           </div>
         </div>
       </div>

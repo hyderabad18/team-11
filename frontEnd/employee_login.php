@@ -16,7 +16,7 @@ if (!$result) {
 if($result->num_rows==1) 
 {
 
-header('Location:http://localhost:8080/youthforjob/team-11/employee.html');
+header('Location:NGO_dashboard.php');
 }
 else
 {
@@ -108,7 +108,7 @@ $conn->close();
           </form>
         </div>
       </div>
-      <a href="emp_register.html">Create account</a>
+      <a href="http://localhost:8080/youthforjob/team-11/frontEnd/emp_register.php">Create account</a>
     </center>
 
     <div class="section"></div>

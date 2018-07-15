@@ -110,6 +110,7 @@ radio:required {
 
 </html>
 <?php
+error_reporting(E_ERROR | E_PARSE);
 include 'connection.php';
 if(isset($_POST['action']))
 {
@@ -117,23 +118,20 @@ $a=$_POST['name'];
 $b=$_POST['email'];
 $c=$_POST['password'];
 $d=$_POST['id'];
-$result1 = mysqli_query($conn,"SELECT emp_email FROM coorporate WHERE company_email = '".$_POST["email"]."'");
-$result2 = mysqli_query($conn,"SELECT emp_contact FROM  coorporate WHERE company_contact = '".$_POST["mobile"]."'");
+$result1 = mysqli_query($conn,"SELECT emp_email FROM employee WHERE company_email <>'".$_POST["email"]."'");
 if($result1->num_rows==1)
 {
-	
-   die('email alredy registered');	
-}
-if($result2->num_rows==1)
-{	
-	
-	die('mobile already registered');
-}
-
-$result2 = mysqli_query($conn,"insert into coorporate(company_name,company_email,password,company_contact) values('$a','$b','$c','$d')");
-if($result2)
+$result3 = mysqli_query($conn,"insert into employee(emp_name,emp_email,emp_password,emp_id) values('$a','$b','$c','$d')");
+if($result3)
 {
-	header('Location: http://localhost:8080/youthforjob/team-11/frontEnd/corporate_login.php');
+	header('Location: http://localhost:8080/youthforjob/team-11/frontEnd/employee_login.php');
+}
+  
+}
+else
+{
+ die('email alredy registered');	
+
 }
 }
 ?>
