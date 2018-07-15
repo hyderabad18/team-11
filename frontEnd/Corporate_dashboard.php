@@ -1,3 +1,13 @@
+<?php
+session_start();
+include"connection.php";
+
+$name=$_SESSION['email'];
+if($name==null)
+{
+	header('Location:localhost:8080/youthforjob/team-11/frontEnd/corporate_login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>NGO Dashboard</title>
+  <title>Corporate Dashboard</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -21,7 +31,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">NGO Dashboard</a>
+    <a class="navbar-brand" href="index.html">Corporate Dashboard</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -64,8 +74,12 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <a class="nav-link" data-toggle="modal" href="http://localhost:8080/youthforjob/team-11/frontEnd/student_login.php" data-target="#exampleModal">
+            <h5>Welcome&nbsp;<?php echo $name;?></h5>
+			<i class="fa fa-fw fa-sign-out"></i>Logout</a>
+			<?php
+			session_destroy();
+			?>
         </li>
       </ul>
     </div>
@@ -89,7 +103,7 @@
               </div>
               <div class="mr-5">Eligible students</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="NGO_Estu.html">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
 
               <span class="float-right">
@@ -107,7 +121,7 @@
               <div class="mr-5">Job openings</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View </span>
+              <span class="float-left">Update </span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
@@ -120,32 +134,17 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-question-circle"></i>
               </div>
-              <div class="mr-5">Question Bank</div>
+              <div class="mr-5">Mock Papers</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View</span>
+              <span class="float-left">upload</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
             </a>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-calendar"></i>
-              </div>
-              <div class="mr-5">Training Events</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Create or update</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
+    
       </div>
       <!-- Area Chart Example-->
    
@@ -154,54 +153,7 @@
         <div class="col-lg-3"></div>
         <div class="col-lg-3"></div>
 
-        <div class="col-lg-3">
-          <!-- Example Notifications Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-trophy"></i> Student Leaderboard</div>
-            <div class="list-group list-group-flush small">
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Raghu Ram</strong>
-                    <div class="text-muted smaller">Aptitude</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Krishna</strong>
-                    <div class="text-muted smaller">Quant</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Arjuna</strong>
-                    <div class="text-muted smaller">Coding</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                  <div class="media-body">
-                    <strong>Radha</strong>
-                    <div class="text-muted smaller">Verbal</div>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" href="#">View all leaderboard...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+        
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -227,7 +179,8 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+			
+            <a class="btn btn-primary" href="http://localhost:8080/youthforjob/team-11/frontEnd/corporate_login.php">Logout</a>
           </div>
         </div>
       </div>

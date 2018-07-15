@@ -1,3 +1,13 @@
+<?php
+session_start();
+include"connection.php";
+
+$name=$_SESSION['email'];
+if($name==null)
+{
+	header('Location:localhost:8080/youthforjob/team-11/frontEnd/employee_login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +56,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="tables.html">Prospective</a>
+              <a href="prospective.html">Prospective</a>
             </li>
             <li>
               <a href="cards.html">Registered</a>
@@ -65,6 +75,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+		   <h5>Welcome&nbsp;<?php echo $name;?></h5>
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
@@ -89,7 +100,7 @@
               </div>
               <div class="mr-5">Eligible students</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="NGO_Estu.html">
               <span class="float-left">View Details</span>
 
               <span class="float-right">
@@ -227,7 +238,10 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="employee_login.php">Logout</a>
+			<?php
+			session_destroy();
+			?>
           </div>
         </div>
       </div>
