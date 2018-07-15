@@ -195,10 +195,10 @@ if(isset($_POST['submit']))
 	$b=$_POST['1'];
 	$score=0;
 $sql=mysqli_query($conn,"select answer from mock where questionid=0");
-$row=$mysqli_fetch_array($sql);
-	if($a==$row[0])
+$row=mysqli_fetch_array($sql);
+	if(!strcmp($a,$row[0]))
 		$score=50;
-$sql2=mysqli_query($conn,"select answer from mock where questionid=1");
+     $sql2=mysqli_query($conn,"select answer from mock where questionid=1");
 $row1=$mysqli_fetch_array($sql2);
 if($b==$row1[1])
 	$score=$score+50;

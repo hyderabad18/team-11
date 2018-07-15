@@ -58,9 +58,7 @@ if($name==null)
             <li>
               <a href="prospective.html">Prospective</a>
             </li>
-            <li>
-              <a href="cards.html">Registered</a>
-            </li>
+           
           </ul>
         </li>
         
