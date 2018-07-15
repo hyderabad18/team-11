@@ -248,7 +248,7 @@ $q2=array("verbal","quant","aptitude");
               </div>
               <div class="mr-5">Assessment Test </div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="http://localhost:8080/youthforjob/team-11/frontEnd/assess.php">
               <span class="float-left">Take</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
