@@ -190,7 +190,7 @@ $q2=array("verbal","quant","aptitude");
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-		  <h5>Welcome&nbsp;<?php echo $name;?></h5>
+		 
             <i class="fa fa-fw fa-sign-out" align="right"></i>Logout</a>
         </li>
       </ul>
@@ -215,7 +215,7 @@ $q2=array("verbal","quant","aptitude");
               </div>
               <div class="mr-5">Notifications</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="NGO_Estu.html">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View</span>
 
               <span class="float-right">
@@ -230,10 +230,10 @@ $q2=array("verbal","quant","aptitude");
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-stethoscope"></i>
               </div>
-              <div class="mr-5">Diagnosis tests</div>
+              <div class="mr-5">Career Graph</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Take </span>
+            <a class="card-footer text-white clearfix small z-1" href="cfg.html">
+              <span class="float-left">Show </span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>

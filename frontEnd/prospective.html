@@ -1,3 +1,22 @@
+<?php
+session_start();
+if(isset($_POST['submit'])){
+	include 'connection.php';
+	$sql=mysqli_query($conn,"select * from prospective ");
+	
+$E= $_SESSION['email'];
+$subject = 'youth for jobs';
+$message = "greeting from youth 4 jobs, me may reach out as we may help your phisically disables students";
+// for sending mutiple users mail("$E,jayanthjay22@gmail.com,jrj@gmail.com" , $subject, $message);
+while($row=mysqli_fetch_array($sql)) {
+mail($row[0],$subject,$message);
+   
+} 
+else {
+    die('Failure: Email was not sent!');
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,14 +40,14 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">NGO Dashboard</a>
+    <a class="navbar-brand" href="http://localhost:8080/youthforjob/team-11/frontEnd/NGO_dashboard.php">NGO Dashboard</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="http://localhost:8080/youthforjob/team-11/frontEnd/NGO_dashboard.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -86,7 +105,7 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <button type="button" class="btn btn-secondary" style="float:right;padding-left: 10px">Mail prospective colleges</button>
+              <input type="button" class="btn btn-secondary" name="submit" style="float:right;padding-left: 10px" value="Mail prospective colleges">
 
               <thead>
                 <tr>

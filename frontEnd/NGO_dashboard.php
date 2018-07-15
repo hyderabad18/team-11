@@ -117,7 +117,7 @@ if($name==null)
               </div>
               <div class="mr-5">Job openings</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="jobOpeningsCorporate.html">
               <span class="float-left">View </span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
