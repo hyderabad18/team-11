@@ -16,7 +16,7 @@ if (!$result) {
 if($result->num_rows==1) 
 {
 
-header('Location:http://localhost:8080/youthforjob/team-11/employee.html');
+header('Location:NGO_dashboard.php');
 }
 else
 {

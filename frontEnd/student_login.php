@@ -17,7 +17,7 @@ $row = mysqli_fetch_row($result);
 if($result->num_rows==1) 
 {
 
-header('Location:http://localhost:8080/youthforjob/team-11/student.html');
+header('Location:http://localhost:8080/youthforjob/team-11/frontEnd/student_dashboard.php');
 }
 else
 {
@@ -105,7 +105,7 @@ $conn->close();
             <br />
             <center>
               <div class='row'>
-                <input type='submit'  value="Login" name='btn_login' class='col s12 btn btn-large waves-effect indigo'/>
+                <input type='submit' style="padding-top: 20px;" value="Login" name='btn_login' class='col s12 btn btn-large waves-effect indigo'/>
               </div>
             </center>
           </form>

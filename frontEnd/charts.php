@@ -82,7 +82,6 @@ $q2=array("verbal","quant","aptitude");
   </head>
   <body>
  
-    <div id="columnchart_material" style="width: 500px; height: 500px;"></div>
 	<div id="columnchart_material2" style="width: 500px; height: 500px;"></div>
 	
   </body>

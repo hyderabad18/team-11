@@ -37,6 +37,7 @@ $_SESSION['count']=1;
 	{
 	echo $row[1]; 
 	?>
+
 </p>
                 </div>
                 <div class="card-action">
